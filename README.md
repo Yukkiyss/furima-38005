@@ -62,7 +62,7 @@
 | shipment_source_prefecture_id   | integer    | null: false                    |
 | buyer_city                      | string     | null: false                    |
 | buyer_block                     | string     | null: false                    |
-| buyer_building                  | string     | null: false                    |
+| buyer_building                  | string     |                                |
 | buyer_phone_number              | string     | null: false                    |
 
 ### Association
