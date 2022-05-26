@@ -28,7 +28,7 @@
 | item_name                      | string     | null: false                    |
 | item_price                     | integer    | null: false                    |
 | item_explanation_id            | integer    | null: false                    |
-| nickname                       | references | null: false, foreign_key: true |
+| user                           | references | null: false, foreign_key: true |
 | category_id                    | integer    | null: false                    |
 | delivery_chage_id              | integer    | null: false                    |
 | shipment_source_prefecture_id  | integer    | null: false                    |
@@ -45,7 +45,7 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| nickname           | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 | item_name          | references | null: false, foreign_key: true |
 
 ### Association
