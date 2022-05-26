@@ -33,7 +33,7 @@
 | delivery_chage_id              | integer    | null: false                    |
 | shipment_source_prefecture_id  | integer    | null: false                    |
 | send_date_id                   | integer    | null: false                    |
-| liles                          | string     | null: false                    |
+| item_detail                    | text       | null: false                    |
 
 ### Association
 
