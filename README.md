@@ -57,12 +57,12 @@
 
 | Column                          | Type       | Options                        |
 | ------------------------------- | ---------- | ------------------------------ |
-| postcode                        | string     | null: false                    |
+| postcode                        | string     | null: false, foreign_key: true |
 | shipment_source_prefecture_id   | integer    | null: false                    |
-| buyer_city                      | string     | null: false                    |
-| buyer_block                     | string     | null: false                    |
-| buyer_building                  | string     |                                |
-| buyer_phone_number              | string     | null: false                    |
+| buyer_city                      | string     | null: false, foreign_key: true |
+| buyer_block                     | string     | null: false, foreign_key: true |
+| buyer_building                  | string     | foreign_key: true              |
+| buyer_phone_number              | string     | null: false, foreign_key: true |
 
 ### Association
 
