@@ -19,6 +19,7 @@
 
 - has_many :items
 - has_many :orders
+- has_one :domicile
 
 ## items テーブル
 
@@ -55,15 +56,16 @@
 
 ## domicilesテーブル
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| postcode           | string     | null: false                    |
-| buyer_prefecture   | string     | null: false                    |
-| buyer_city         | string     | null: false                    |
-| buyer_block        | string     | null: false                    |
-| buyer_building     | string     | null: false                    |
-| buyer_phone_number | string     | null: false                    |
+| Column                          | Type       | Options                        |
+| ------------------------------- | ---------- | ------------------------------ |
+| postcode                        | string     | null: false                    |
+| shipment_source_prefecture_id   | string     | null: false                    |
+| buyer_city                      | string     | null: false                    |
+| buyer_block                     | string     | null: false                    |
+| buyer_building                  | string     | null: false                    |
+| buyer_phone_number              | string     | null: false                    |
 
 ### Association
 
 - belongs_to :order
+- belongs_to :user
