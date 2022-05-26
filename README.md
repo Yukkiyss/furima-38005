@@ -59,7 +59,7 @@
 | Column                          | Type       | Options                        |
 | ------------------------------- | ---------- | ------------------------------ |
 | postcode                        | string     | null: false                    |
-| shipment_source_prefecture_id   | string     | null: false                    |
+| shipment_source_prefecture_id   | integer    | null: false                    |
 | buyer_city                      | string     | null: false                    |
 | buyer_block                     | string     | null: false                    |
 | buyer_building                  | string     | null: false                    |
