@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   validates :shipment_source_prefecture_id, presence: true
   validates :send_date_id, presence: true
   validates :item_detail, presence: true
+  validates :image, presence: true
 
   with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
