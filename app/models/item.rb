@@ -6,9 +6,8 @@ class Item < ApplicationRecord
   validates :item_name, presence: true
   validates :item_detail, presence: true
   validates :image, presence: true
-  validates :item_price, presence: true, format: { with: /\A[0-9]+\z/ },length: {minimum: 3, maxinum: 7},numericality: { only_integer: true,
-    greater_than: 300, less_than: 9999999
-    }
+  validates :item_price, presence: true, format: { with: /\A[0-9]+\z/ }, length: { minimum: 3, maxinum: 7 }, numericality: { only_integer: true,
+                                                                                                                             greater_than: 300, less_than: 9_999_999 }
 
   with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
@@ -24,5 +23,4 @@ class Item < ApplicationRecord
   belongs_to :item_explanation
   belongs_to :shipment_source_prefecture
   belongs_to :send_date
-
 end
