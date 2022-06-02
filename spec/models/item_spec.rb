@@ -68,29 +68,28 @@ RSpec.describe Item, type: :model do
       end
 
       it '価格に半角数字以外が含まれている場合は出品できない' do
-        @item.item_price  = '500０'
+        @item.item_price = '500０'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price is not a number")
+        expect(@item.errors.full_messages).to include('Item price is not a number')
       end
 
       it '価格が300円未満では出品できない' do
-        @item.item_price  = '150'
+        @item.item_price = '150'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price must be greater than 300")
+        expect(@item.errors.full_messages).to include('Item price must be greater than 300')
       end
 
       it '価格が9_999_999円を超えると出品できない' do
-        @item.item_price  = '100000000'
+        @item.item_price = '100000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item price must be less than 9999999")
+        expect(@item.errors.full_messages).to include('Item price must be less than 9999999')
       end
 
       it 'userが紐付いていなければ出品できない' do
-        @item.user  = nil
+        @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
-
     end
   end
 end
