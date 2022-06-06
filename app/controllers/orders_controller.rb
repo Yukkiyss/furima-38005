@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.new
+    @order_domicile = OrderDomicile.new
     @item = Item.find(params[:item_id])
   end
 
