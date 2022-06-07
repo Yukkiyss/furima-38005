@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @order_domicile = OrderDomicile.new(order_params)
     @order_domicile.save
   end

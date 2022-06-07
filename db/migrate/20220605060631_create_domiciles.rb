@@ -7,7 +7,6 @@ class CreateDomiciles < ActiveRecord::Migration[6.0]
       t.string  :buyer_block, null: false
       t.string  :buyer_building
       t.string  :buyer_phone_number, null: false
-      t.integer  :item_explanation_id, null: false
       t.references :order, null: false, foreign_key: true
       t.timestamps
     end

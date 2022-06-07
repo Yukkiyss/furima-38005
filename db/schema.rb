@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_06_05_060631) do
     t.string "buyer_block", null: false
     t.string "buyer_building"
     t.string "buyer_phone_number", null: false
-    t.integer "item_explanation_id", null: false
     t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

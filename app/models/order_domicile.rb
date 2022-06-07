@@ -18,7 +18,7 @@ class OrderDomicile
       order = Order.create(user_id: user_id, item_id: item_id)
       Domicile.create(postcode: postcode, shipment_source_prefecture_id: shipment_source_prefecture_id, buyer_city: buyer_city, 
       buyer_block: buyer_block, buyer_building: buyer_building,
-      buyer_phone_number: buyer_phone_number, order_id: order.id, user_id: user_id, item_id: item_id)
+      buyer_phone_number: buyer_phone_number, order_id: order.id)
     end
       
 
