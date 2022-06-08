@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
   before_action :item_params_id, only: [:show, :edit, :update, :destroy]
   before_action :move_to_root_path, only: [:edit, :destroy]
 
-
-
   def index
     @items = Item.all.order(created_at: :desc)
   end
@@ -53,9 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root_path
-    if @item.user_id != current_user.id || @item.order.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.user_id != current_user.id || @item.order.present?
   end
-
 end
