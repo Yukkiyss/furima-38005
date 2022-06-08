@@ -6,6 +6,6 @@ FactoryBot.define do
     buyer_block           { '1-1' }
     buyer_building     { '岐阜ハイツ' }
     buyer_phone_number { '09032324545' }
-    
+    token {"tok_abcdefghijk00000000000000000"}
   end
 end

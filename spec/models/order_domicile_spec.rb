@@ -46,6 +46,12 @@ RSpec.describe OrderDomicile, type: :model do
         expect(@order_domicile.errors.full_messages).to include("Buyer phone number can't be blank")
       end
 
+      it 'tokenが空だと購入できない' do
+        @order_domicile.token = nil
+        @order_domicile.valid?
+        expect(@order_domicile.errors.full_messages).to include("Token can't be blank")
+      end
+
     end
   end
 end

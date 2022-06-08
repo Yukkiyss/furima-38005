@@ -1,6 +1,6 @@
 class OrderDomicile
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postcode, :shipment_source_prefecture_id, :buyer_city, :buyer_block, :buyer_building, :buyer_phone_number
+  attr_accessor :user_id, :item_id, :postcode, :shipment_source_prefecture_id, :buyer_city, :buyer_block, :buyer_building, :buyer_phone_number, :token
 
   with_options presence: true do
     validates :user_id
@@ -9,6 +9,7 @@ class OrderDomicile
     validates :buyer_city
     validates :buyer_block
     validates :buyer_phone_number, numericality: { only_integer: true }
+    validates :token
     end
 
     validates :shipment_source_prefecture_id, numericality: { other_than: 1, message: "can't be blank" }

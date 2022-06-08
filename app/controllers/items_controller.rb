@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_root_path, only: [:edit, :destroy]
   before_action :item_params_id, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path, only: [:edit, :destroy]
+
+
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -46,12 +48,14 @@ class ItemsController < ApplicationController
                                  :shipment_source_prefecture_id, :send_date_id, :item_detail, :image).merge(user_id: current_user.id)
   end
 
-  def move_to_root_path
-    @item = Item.find(params[:id])
-    redirect_to root_path unless current_user.id == @item.user_id
-  end
-
   def item_params_id
     @item = Item.find(params[:id])
   end
+
+  def move_to_root_path
+    if @item.user_id != current_user.id || @item.order.present?
+      redirect_to root_path
+    end
+  end
+
 end
